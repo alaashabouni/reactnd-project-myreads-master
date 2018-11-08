@@ -34,8 +34,31 @@ class BooksApp extends React.Component {
        });
      }
 
+  changeShelf = (book, shelf) => {
+    BooksAPI
+      .update(book, shelf)
+      .then(response => {
+        let newList = this
+        .state
+        .books
+        .slice(0);
+
+        const books = newList.filter(listBook => listBook.id === book.id);
+        if (books.length) {
+          books[0].shelf = shelf;
+        } else {
+          newList.push(book);
+          newList = Sorting.sortAllBooks(newList);
+        }
+        this.setState({books: newList});
+      })
+  }
+
   render() {
-    return (<Case books={this.state.books} onRefreshAllBooks={this.refreshAllBooks}/>)
+    return (<Case
+      books={this.state.books}
+      onRefreshAllBooks={this.refreshAllBooks}
+      onChangeShelf={this.changeShelf}/>)
   }
 }
 
