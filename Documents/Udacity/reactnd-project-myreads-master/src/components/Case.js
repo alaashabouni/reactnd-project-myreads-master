@@ -35,7 +35,7 @@ class Case extends Component {
         .filter(book => book.shelf === 'read')
     };
 
-    return {[ newCurrentBook, newWantedBook, newReadBook]}
+    return ([ newCurrentBook, newWantedBook, newReadBook]);
   }
     render() {
       let shelves = [];

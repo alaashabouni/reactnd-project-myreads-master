@@ -17,11 +17,10 @@ class Book extends Component {
 
 
     return (
-      <li>
         <div className="book">
           <div className="book-top">
             <button
-              className="book-cover-button"
+              className="book-cover-button">
               <div
                 className="book-cover"
                 style={{
@@ -35,7 +34,6 @@ class Book extends Component {
           <div className="book-title">{this.props.book.title}</div>
           <div className="book-authors">{authors}</div>
         </div>
-      </li>
     )
   }
 }
