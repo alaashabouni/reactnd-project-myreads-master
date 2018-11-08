@@ -3,7 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import * as Sorting from './Sorting';
 
 import './App.css'
-import Case from './components/Case'; //TODO do you need the js at the end?
+import Case from './components/Case';
 
 
 class BooksApp extends React.Component {
