@@ -3,7 +3,6 @@ import Shelf from "./Shelf";
 
 class Case extends Component {
   state = {
-
   }
 
 
@@ -22,6 +21,7 @@ class Case extends Component {
                 <a onClick={() => this.setState({ showSearchPage: false })}>Close</a>
               </div>
             </div>
+          </div>
           </div>
         )
     }

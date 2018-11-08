@@ -2,6 +2,7 @@ import React from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Case from './components/Case'; //TODO do you need the js at the end?
+import Sorting from '.components/Sorting';
 
 class BooksApp extends React.Component {
   state = {
@@ -14,10 +15,27 @@ class BooksApp extends React.Component {
     showSearchPage: false
   }
 
-  render() {
-    return {
-      <Case/>
+  componentDidMount = () => {
+    if (this.state.newBook) {
+      this.refreshAllBooks();
     }
+   }
+
+   refreshAllBooks = () => {
+     BooksAPI
+     .getAll()
+     .then(list) => {
+       this.setState({
+         books: Sorting.sortAllBooks(list),
+         newBook: false
+        });
+       });
+     }
+
+  render() {
+    return (
+      <Case books={this.state.books} onRefreshAllBooks={this.refreshAllBooks/>
+    )
   }
 }
 
