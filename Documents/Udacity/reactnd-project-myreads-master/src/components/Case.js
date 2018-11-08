@@ -53,6 +53,7 @@ class Case extends Component {
                   {shelves && shelves.map((shelf) => (<Shelf
                     key={shelf.name}
                     shelf={shelf}
+                    onChangeShelf={this.props.onChangeShelf}
                     />))}
               </div>
               <div className="open-search">
