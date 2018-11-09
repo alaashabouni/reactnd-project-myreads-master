@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Shelf from "./Shelf";
+import BookShelf from "./Shelf";
 
 class Case extends Component {
   state = {}
@@ -50,7 +50,7 @@ class Case extends Component {
             </div>
             <div className="list-books-content">
               <div>
-                  {shelves && shelves.map((shelf) => (<Shelf
+                  {shelves && shelves.map((shelf) => (<BookShelf
                     key={shelf.name}
                     shelf={shelf}
                     onChangeShelf={this.props.onChangeShelf}

@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import Book from "./Book";
 
-class Shelf extends Component {
+class BookShelf extends Component {
   state = {}
 
   render () {
     return (
       <div className="bookshelf">
-        <h2 className="bookshelf-title">Currently Reading</h2>
+        <h2 className="bookshelf-title">{this.props.shelf.name}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
             {this
@@ -28,4 +28,4 @@ class Shelf extends Component {
     }
 }
 
-export default Shelf;
+export default BookShelf;
