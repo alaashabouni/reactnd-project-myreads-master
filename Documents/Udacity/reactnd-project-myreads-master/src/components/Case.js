@@ -57,7 +57,7 @@ class Case extends Component {
                     />))}
               </div>
               <div className="open-search">
-                <a onClick={() => this.setState({ showSearchPage: false })}>Close</a>
+                <a onClick={() => this.setState({ showSearchPage: true })}>Open</a>
               </div>
             </div>
           </div>
