@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './App.css'
+import {link} from 'react-router-dom';
 
 class Search extends Component {
   state = {
@@ -23,3 +23,5 @@ class Search extends Component {
     )
   }
 }
+
+export default Search;

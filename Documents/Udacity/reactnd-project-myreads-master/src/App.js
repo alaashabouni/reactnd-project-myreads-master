@@ -1,9 +1,12 @@
 import React from 'react'
+import {Route} from 'react-router-dom';
+
 import * as BooksAPI from './BooksAPI'
 import * as Sorting from './Sorting';
 
 import './App.css'
 import Case from './components/Case';
+import Search from './components/Search'
 
 
 class BooksApp extends React.Component {
@@ -55,10 +58,24 @@ class BooksApp extends React.Component {
   }
 
   render() {
-    return (<Case
-      books={this.state.books}
-      onRefreshAllBooks={this.refreshAllBooks}
-      onChangeShelf={this.changeShelf}/>)
+    return (
+      <div className="app">
+        <Route
+          exact
+          path='/'
+          render={(() => (<Case
+            books={this.state.books}
+            onChangeShelf={this.changeShelf}
+            onRefreshAllBooks={this.refreshAllBooks}/>))}/>
+
+        <Route
+          exact
+          path='/search'
+          render={(() => (<Search
+            selectedBooks={this.state.books}
+            onChangeShelf={this.changeShelf}/>))}/>
+      </div>
+    )
   }
 }
 
