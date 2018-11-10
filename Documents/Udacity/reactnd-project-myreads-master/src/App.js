@@ -1,5 +1,6 @@
 import React from 'react'
 import {Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import * as BooksAPI from './BooksAPI'
 import * as Sorting from './Sorting';
@@ -68,6 +69,10 @@ class BooksApp extends React.Component {
           render={(() => (<Search
             selectedBooks={this.state.books}
             onChangeShelf={this.changeShelf}/>))}/>
+
+        <div className="open-search">
+              <Link className="open-search" to='/search'>Add a book</Link>
+        </div>
       </div>
     )
   }

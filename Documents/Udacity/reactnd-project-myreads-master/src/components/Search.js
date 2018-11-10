@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import * as BooksAPI from '../BooksAPI';
 import * as Sorting from '../Sorting';
 import Book from './Book';
@@ -24,7 +24,7 @@ class Search extends Component {
     }
 
     BooksAPI
-      .search(this.stae.query)
+      .search(this.state.query)
       .then(response => {
         let newList = [];
         let newError = false;
@@ -49,7 +49,7 @@ class Search extends Component {
     return (
       <div className="search-books">
         <div className="search-books-bar">
-          <Link className="close-search" to='/'>Close</Link>
+          <Link to='/' className="close-search">Close</Link>
           <div className="search-books-input-wrapper">
             <input
               type="text"
