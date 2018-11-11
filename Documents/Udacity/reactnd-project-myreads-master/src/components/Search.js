@@ -8,7 +8,6 @@ class Search extends Component {
   state = {
     query:"",
     books: [],
-    showModal: false
   };
 
   queryTimer = null;
@@ -25,9 +24,7 @@ class Search extends Component {
       return;
     }
 
-    BooksAPI
-      .search(this.state.query)
-      .then(response => {
+    BooksAPI.search(this.state.query).then(response => {
         let newList = [];
         let newError = false;
         if (response === undefined || (response.error && response.error !== "empty query")) {

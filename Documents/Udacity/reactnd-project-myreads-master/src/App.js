@@ -11,9 +11,7 @@ import Search from './components/Search'
 
 
 class BooksApp extends React.Component {
-  state = {
-    showSearchPage: false
-  }
+  state = {}
 
   componentDidMount = () => {
     if (this.state.newBook) {
