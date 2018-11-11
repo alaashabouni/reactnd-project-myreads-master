@@ -11,6 +11,8 @@ class Search extends Component {
     showModal: false
   };
 
+  queryTimer = null;
+
   changeQuery = (value) => {
     clearTimeout(this.queryTimer);
     this.setState({query:value});

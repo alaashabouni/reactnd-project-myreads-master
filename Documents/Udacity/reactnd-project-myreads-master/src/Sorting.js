@@ -1,4 +1,5 @@
 
+
 export const sortAllBooks = (list) => {
   const newList = list.sort(function (a,b) {
     const titleA = a
@@ -18,12 +19,11 @@ export const sortAllBooks = (list) => {
 
   return newList;
 }
-
 export const mergeShelfAndSearch = (shelf, search) => {
   const hashTable = {};
   shelf.forEach(book => hashTable[book.id] = book.shelf);
 
-  search.forEach(book => {
+  search.forEach(book=> {
     book.shelf = hashTable[book.id] || 'none';
   });
 
